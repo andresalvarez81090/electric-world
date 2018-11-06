@@ -1,0 +1,19 @@
+<h1>Sign Up</h1>
+<br>
+<label class="label">User Name</label>
+<p class="control">
+  <input [(ngModel)]="username" class="input" type="text" placeholder="User Name">
+</p>
+<label class="label">Email</label>
+<p class="control">
+  <input [(ngModel)]="email" class="input" type="text" placeholder="Email">
+</p>
+<label class="label">Password</label>
+<p class="control">
+  <input [(ngModel)]="password" class="input" type="text" placeholder="Password">
+</p>
+<br>
+<p class="control">
+  <button (click)="onSubmit()" class="button is-primary">Submit</button>
+  <button class="button is-warning">Cancel</button>
+</p>

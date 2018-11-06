@@ -1,0 +1,61 @@
+<div *ngIf="festival">
+
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="http://placehold.it/128x128">
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>{{festival.name}}</strong> <small>@{{festival.name}}</small> <small>{{festival.id}}</small>
+        <br>
+        {{festival.name}}
+      </p>
+    
+
+      <h2>{{festival.name}} details!</h2>
+  	    <div>
+          <label>id: </label>{{festival.id}}
+        </div>
+ 	    <div>
+    	  <label>name: </label>
+    	  <input [(ngModel)]="festival.name" placeholder="name" />
+  	    </div>
+  	   <br>
+  	  <button (click)="goBack()">Back</button>
+    </div>
+
+    <nav class="level">
+      <div class="level-left">
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-reply"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-heart"></i></span>
+        </a>
+      </div>
+    </nav>
+  
+  </div>
+  <div class="media-right">
+    <button class="delete"></button>
+  </div>
+</article>
+
+
+<!--
+  <h2>{{group.name}} details!</h2>
+  <div>
+    <label>id: </label>{{group.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="group.name" placeholder="name" />
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>
+-->

@@ -1,0 +1,19 @@
+<nav class="nav has-shadow">
+  <div class="container">
+    <div class="nav-left">
+      <a class="nav-item is-tab" [routerLink]="['Profile']">Profile</a>
+      <a class="nav-item is-tab" [routerLink]="['Messages']">Messages</a>
+      <a class="nav-item is-tab" [routerLink]="['Festivals']">Festivals</a>
+      <a class="nav-item is-tab" [routerLink]="['Groups']">Groups</a>
+      <a class="nav-item is-tab" [routerLink]="['Map']">Map</a>
+    </div>
+    <div class="nav-right">
+      <a *ngIf="!stateService.user" class="nav-item is-tab" [routerLink]="['Signup']">Sign Up</a>
+      <a *ngIf="!stateService.user" class="nav-item is-tab" [routerLink]="['Login']">Login</a>
+      <a *ngIf="stateService.user" (click)="actionService.removeUser()" class="nav-item is-tab">Logout</a>
+    </div>
+  </div>
+</nav>
+<div class="main">
+	<router-outlet ></router-outlet>
+</div>

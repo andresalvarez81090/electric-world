@@ -1,0 +1,50 @@
+<h1 class="title is-1">Festivals</h1>
+<br>
+<ul class="festivals">
+  <li *ngFor="let festival of festivals"
+    [class.selected]="festival === selectedFestival"
+    (click)="onSelect(festival)">
+
+<!--
+    <span class="badge">{{group.id}}</span> {{group.name}}
+-->
+
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="http://placehold.it/128x128">
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>{{festival.name}}</strong> <small>@{{festival.name}}</small> <small>{{festival.id}}</small>
+        <br>
+        {{festival.name}}
+      </p>  
+    </div>
+    <nav class="level">
+      <div class="level-left">
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-reply"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-heart"></i></span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</article>
+</li>
+</ul>
+
+<br>
+<div *ngIf="selectedGroup">
+  <h2>
+    {{selectedfestival.name | uppercase}} is the selected Festival
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

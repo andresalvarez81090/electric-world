@@ -1,0 +1,50 @@
+<h1 class="title is-1">Groups</h1>
+<br>
+<ul class="groups">
+  <li *ngFor="let group of groups"
+    [class.selected]="group === selectedGroup"
+    (click)="onSelect(group)">
+
+<!--
+    <span class="badge">{{group.id}}</span> {{group.name}}
+-->
+
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="http://placehold.it/128x128">
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>{{group.name}}</strong> <small>@j{{group.name}}</small> <small>{{group.id}}</small>
+        <br>
+        {{group.name}}
+      </p>  
+    </div>
+    <nav class="level">
+      <div class="level-left">
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-reply"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-heart"></i></span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</article>
+</li>
+</ul>
+
+<br>
+<div *ngIf="selectedGroup">
+  <h2>
+    {{selectedGroup.name | uppercase}} is the selected Group
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
